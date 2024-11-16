@@ -1,0 +1,19 @@
+import random
+
+def play():
+    print("Let's Begin the Rock, Papers and Scissors")
+    user = input("What's your choice, 'r' for Rock, 'p' for Paper, 's' for scissors:")
+    computer = random.choice(['r', 'p', 's'])
+    if user == computer:
+        print("It's a Tie!")
+    # r > s, r < p, s > p, s < r, p > r, p < s
+    if iswin(user, computer):
+        print("Yay!, You Won.")
+    return "You lost the game."
+
+def iswin(player, opponent):
+    if (player == 'r' and opponent == 's') or (player == 'p' and opponent == 'r') or (player == 's' and opponent == 'p'):
+        return True
+    return False
+
+print(play())
