@@ -1,0 +1,25 @@
+# the best and cleanest way to concatenate strings in python is by the use of "f" strings!
+# this is because with the help of f-strings we can directly insert the variable value and merge it
+time = input("Time of the day:")
+animal = input("Animal:")
+feel = input("Feeling:")
+noise = input("Any kind of sound:")
+person = input("Person of some age")
+pronoun1 = input("He/She:")
+pronoun2 = input("Him/Her:")
+verb = input("Verb:")
+state = input("State of mind:")
+verb1 = input("Verb:")
+action = input("Action Verb:")
+action2 = input("Action Verb:")
+thing = input("Thing:")
+feeling = input("Strong Feeling:")
+madlib = (f"It was a beautiful {time}, when I was out on a lone walk. It was that day I stumbled upon a {animal}.\
+It came walking near me, and I suddenly felt {feel}. As I was about to go my way, I heard a {noise} right at my back.\
+I was first startled, then came back to my senses and turned back. There was a {person}, with a big smile on their face which rather seemed uncanny.\
+{pronoun1} then explained that was {pronoun2} {animal}. Soon {pronoun1} started {verb}, which left me {state}.\
+I was trying my best to comprehend the situation and understanding what was going on. Suddenly, I felt a {verb1} on the right side of my arm.\
+{pronoun1} said in a very low voice that, someone was trying to {action} my bag from behind and has a {thing} with them pointed at me.\
+I turned back within a flash, and quick enough, that person {action2} after my notice. And when I moved back, the {person} and that {animal} was gone, like if they were never there!\
+With all that happened, I ran for home {feeling}.")
+print(madlib)
