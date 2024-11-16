@@ -1,0 +1,35 @@
+import random
+from words import words
+import string
+
+def get_valid_word(words):
+    word = random.choice(words)
+    while '-' in word or ' ' in word:
+        word = random.choice(words)
+    return word.upper()
+def hangman():
+    word = get_valid_word(words)
+    word_letters = set(words) # keeps the set of letter in the chosen word.
+    alphabets = set(string.ascii_uppercase)
+    used_letters = set() # collection of the letters the user has guessed
+    user_input = input("Enter your guess:").upper()
+    while len(word_letters) > 0:
+        # showing user the letters guessed so far.
+        print("You have used these letters:", ' '.join(used_letters))
+        # showing the user the current word.
+        # first create a list of every single letter they have guessed correctly is shown.
+        # and the letters that they haven't guessed are dashes as [W-RD]
+        # then print the word-list as a string.
+        word_list = [letter if letter in used_letters else '-' for letter in word]
+        print("Current Word:", ' '.join(word_list))
+        if user_input in alphabets - used_letters:
+            used_letters.add(user_input)
+            if user_input in word_letters:
+                word_letters.remove(user_input)
+        elif user_input in used_letters:
+            print("You have already guessed that letter. Please choose another letter.")
+        else:
+            print("Invalid letter. Try another")
+
+print(hangman())
+
