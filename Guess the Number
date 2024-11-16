@@ -1,0 +1,16 @@
+import random
+
+def guess(x):
+    print("Welcome to the Guessing Game!")
+    print("The rules are simple, you have to guess the number chosen by the computer.\n So, Let's Begin!")
+    random_number = random.randint(1, x)
+    guess_no = 0
+    while guess_no != random_number:
+        guess_no = int(input(f"Enter your best guess between 1 and {x}:"))
+        if guess_no < random_number:
+            print("Sorry, you guessed the number incorrectly. Too Low")
+        elif guess_no > random_number:
+            print("Sorry, you guessed the number incorrectly. Too High")
+    print(f"Yay congrats, you guessed the number {random_number} correctly!!!")
+
+guess(10)
